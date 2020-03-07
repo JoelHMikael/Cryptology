@@ -1,5 +1,3 @@
-from getpass import getpass
-
 def crypt(mode, s, key, abc = "abcdefghijklmnopqrstuvwxyz"):
     upper = []
     
@@ -37,13 +35,3 @@ def cryptfile(mode, file, newfile, key, cryptfunction, abc = "abcdefghijklmnopqr
     except Exception as e:
         print(str(e) + " when trying to write to the new file!")
     newfile.close()
-
-
-c = "y"
-while c == "y":
-    file = input("File? ")
-    newf = input("File to write the result to? ")
-    mode = input("Encrypt/decrypt? ")
-    key = getpass("Key? ")
-    cryptfile(mode, file, newf, key, crypt)
-    c = input("Next file? (y/n)")
